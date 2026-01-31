@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.lab.HelloController">
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0"/>
+    </padding>
+
+    <!-- Панель сервера -->
+    <HBox spacing="10.0">
+        <Label text="Сервер:" />
+        <Label fx:id="serverStateLabel" text="неактивен" />
+        <Label text="t=" />
+        <Label fx:id="serverTimeLabel" text="0" />
+        <Button text="Старт" onAction="#onStartServer"/>
+        <Button text="Стоп" onAction="#onStopServer"/>
+        <Button text="Сброс" onAction="#onResetServer"/>
+    </HBox>
+
+    <!-- Компонент 1 -->
+    <TitledPane text="ComponentOne (время)" expanded="true">
+        <VBox spacing="8.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <Label fx:id="comp1Label" text="прошло 0 c"/>
+            <Canvas fx:id="comp1Canvas" width="260.0" height="40.0"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Компонент 2 -->
+    <TitledPane text="ComponentTwo (клип через N секунд)" expanded="true">
+        <VBox spacing="8.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <HBox spacing="8.0">
+                <Label text="N:"/>
+                <Spinner fx:id="clipDelaySpinner" prefWidth="90.0"/>
+                <Button text="Старт" onAction="#onStartClip"/>
+                <Button text="Стоп" onAction="#onStopClip"/>
+                <Label fx:id="comp2StatusLabel" text="остановлено"/>
+            </HBox>
+            <Canvas fx:id="clipCanvas" width="260.0" height="70.0"/>
+        </VBox>
+    </TitledPane>
+
+    <!-- Компонент 3 -->
+    <TitledPane text="ComponentThree (пульс круга каждые 15 секунд)" expanded="true">
+        <VBox spacing="8.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+            <Label fx:id="comp3StatusLabel" text="ожидание (каждые 15 c)"/>
+            <Canvas fx:id="pulseCanvas" width="260.0" height="80.0"/>
+        </VBox>
+    </TitledPane>
+</VBox>
