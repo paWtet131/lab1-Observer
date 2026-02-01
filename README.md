@@ -23,6 +23,7 @@
 - `HelloController` — связывает FXML и модель;
 - `HelloApplication` — запуск приложения.
 
+<img width="1542" height="1302" alt="Диаграмма без названия drawio (4)" src="https://github.com/user-attachments/assets/fbee8969-672f-4440-9069-c49fa1a05125" />
 
 
 ## Зависимости
